@@ -1,0 +1,33 @@
+@font-face { 
+	font-family: bitOperatorPlus; 
+	src: url(../fonts/8bitOperatorPlusSC-Regular.ttf); 
+}
+
+body,
+p {
+  font-family: bitOperatorPlus;
+}
+
+.controls { 
+		font-family: bitOperatorPlus; 
+		font-size: 12px;
+}
+
+#drawButton {
+	border: solid; 
+	color: green; 
+	padding:10px; 
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+#draw {
+	color: green; 
+	font-size: 16px; 
+	font-weight: bold; 
+	text-decoration: none; 
+}
+
+.preload {
+    display: none;
+}

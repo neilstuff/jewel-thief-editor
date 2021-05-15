@@ -1,0 +1,50 @@
+{
+  "name": "electron-jewel-thief-editor",
+  "version": "1.0.0",
+  "description": "Electron Jewel Thief Editor",
+  "main": "main.js",
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --publish never",
+    "start": "electron ."
+  },
+  "build": {
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesourorange/electron-jewel-thief-editor.git"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "Jewel Thief",
+    "game"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "pug": "^2.0.4",
+    "jquery": "^3.5.0",
+    "mime": "^2.4.5",
+    "electron-disable-file-drop": "^1.0.2"
+  },
+  "devDependencies": {
+    "electron": "^8.2.5",
+    "electron-builder": "^22.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/thesourorange/electron-jewel-thief-editor/issues"
+  },
+  "homepage": "https://github.com/thesourorange/electron-jewel-thief-editor#readme"
+}
