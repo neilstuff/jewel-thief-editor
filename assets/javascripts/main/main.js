@@ -6,12 +6,6 @@
  * @author Neil Brittliff
  * 
  */
-const $ = require('jquery');
-
-require('electron-disable-file-drop');
-
-var fs = require('fs');
-
 const tileSize = 20;
 const originX = 190;
 const originY = 190;
@@ -354,8 +348,11 @@ $('#canvas')[0].addEventListener('mouseup', (evt) => {
 /**
  * Respond to the Document 'ready' event
  */
-$(document).ready(() => {
-
+ $(() => {
+     
+    document.addEventListener('dragover', event => event.preventDefault());
+    document.addEventListener('drop', event => event.preventDefault());
+    
     resetMap();
 
     createSpriteBuffer(0, mapSpritesSmall, 'testtileset', Tile.BLOCKED, 16, 16, 16, 16, 16, 16);
@@ -693,8 +690,10 @@ function createSpriteBuffer(sprite, sprites, src, type, x, y, w, h, dw, dh) {
 
     canvas.width = dw;
     canvas.height = dh;
+    
+    var content = window.api.fs().readFileSync($(`#${src}`)[0].src.slice(
+        window.api.os().type() == 'Windows_NT' ? 7 : 6));
 
-    var content = fs.readFileSync($(`#${src}`)[0].src.slice(7));
     var buffer = toArrayBuffer(content);
     var blob = new Blob([buffer], { type: 'image/gif' });
     var image = new Image();
