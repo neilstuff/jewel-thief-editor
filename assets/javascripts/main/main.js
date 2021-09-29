@@ -355,35 +355,35 @@ $('#canvas')[0].addEventListener('mouseup', (evt) => {
     
     resetMap();
 
-    createSpriteBuffer(0, mapSpritesSmall, 'testtileset', Tile.BLOCKED, 16, 16, 16, 16, 16, 16);
-    createSpriteBuffer(1, mapSpritesSmall, 'testtileset', Tile.BLOCKED, 0, 16, 16, 16, 16, 16);
-    createSpriteBuffer(2, mapSpritesSmall, 'testtileset', Tile.BLOCKED, 32, 16, 16, 16, 16, 16);
-    createSpriteBuffer(3, mapSpritesSmall, 'testtileset', Tile.WALK, 32, 0, 16, 16, 16, 16);
-    createSpriteBuffer(4, mapSpritesSmall, 'testtileset', Tile.WALK, 48, 0, 16, 16, 16, 16);
-    createSpriteBuffer(5, mapSpritesSmall, 'testtileset', Tile.SAIL, 64, 0, 16, 16, 16, 16);
-    createSpriteBuffer(6, mapSpritesSmall, 'testtileset', Tile.WALK, 16, 0, 16, 16, 16, 16);
+    createSpriteBuffer(0, mapSpritesSmall, '#testtileset', Tile.BLOCKED, 16, 16, 16, 16, 16, 16);
+    createSpriteBuffer(1, mapSpritesSmall, '#testtileset', Tile.BLOCKED, 0, 16, 16, 16, 16, 16);
+    createSpriteBuffer(2, mapSpritesSmall, '#testtileset', Tile.BLOCKED, 32, 16, 16, 16, 16, 16);
+    createSpriteBuffer(3, mapSpritesSmall, '#testtileset', Tile.WALK, 32, 0, 16, 16, 16, 16);
+    createSpriteBuffer(4, mapSpritesSmall, '#testtileset', Tile.WALK, 48, 0, 16, 16, 16, 16);
+    createSpriteBuffer(5, mapSpritesSmall, '#testtileset', Tile.SAIL, 64, 0, 16, 16, 16, 16);
+    createSpriteBuffer(6, mapSpritesSmall, '#testtileset', Tile.WALK, 16, 0, 16, 16, 16, 16);
 
-    createSpriteBuffer(0, mapSpritesLarge, 'testtilesetlarge', Tile.BLOCKED, 32, 32, 32, 32, 32, 32);
-    createSpriteBuffer(1, mapSpritesLarge, 'testtilesetlarge', Tile.BLOCKED, 0, 32, 32, 32, 32, 32);
-    createSpriteBuffer(2, mapSpritesLarge, 'testtilesetlarge', Tile.BLOCKED, 64, 32, 32, 32, 32, 32);
-    createSpriteBuffer(3, mapSpritesLarge, 'testtilesetlarge', Tile.WALK, 64, 0, 32, 32, 32, 32);
-    createSpriteBuffer(4, mapSpritesLarge, 'testtilesetlarge', Tile.WALK, 96, 0, 32, 32, 32, 32);
-    createSpriteBuffer(5, mapSpritesLarge, 'testtilesetlarge', Tile.SAIL, 128, 0, 32, 32, 32, 32);
-    createSpriteBuffer(6, mapSpritesLarge, 'testtilesetlarge', Tile.WALK, 0, 0, 32, 32, 32, 32);
+    createSpriteBuffer(0, mapSpritesLarge, '#testtilesetlarge', Tile.BLOCKED, 32, 32, 32, 32, 32, 32);
+    createSpriteBuffer(1, mapSpritesLarge, '#testtilesetlarge', Tile.BLOCKED, 0, 32, 32, 32, 32, 32);
+    createSpriteBuffer(2, mapSpritesLarge, '#testtilesetlarge', Tile.BLOCKED, 64, 32, 32, 32, 32, 32);
+    createSpriteBuffer(3, mapSpritesLarge, '#testtilesetlarge', Tile.WALK, 64, 0, 32, 32, 32, 32);
+    createSpriteBuffer(4, mapSpritesLarge, '#testtilesetlarge', Tile.WALK, 96, 0, 32, 32, 32, 32);
+    createSpriteBuffer(5, mapSpritesLarge, '#testtilesetlarge', Tile.SAIL, 128, 0, 32, 32, 32, 32);
+    createSpriteBuffer(6, mapSpritesLarge, '#testtilesetlarge', Tile.WALK, 0, 0, 32, 32, 32, 32);
 
-    createSpriteBuffer(0, itemSpritesSmall, 'items', Tile.BOAT, 0, 16, 16, 16, 16, 16);
-    createSpriteBuffer(1, itemSpritesSmall, 'items', Tile.AXE, 16, 16, 16, 16, 16, 16);
-    createSpriteBuffer(2, itemSpritesSmall, 'items', Tile.KEY, 32, 16, 16, 16, 16, 16);
-    createSpriteBuffer(3, itemSpritesSmall, 'diamond', Tile.DIAMOND, 0, 0, 16, 16, 16, 16);
-    createSpriteBuffer(4, itemSpritesSmall, 'testtileset', Tile.GATE, 48, 16, 16, 16, 16, 16);
-    createSpriteBuffer(5, itemSpritesSmall, 'playersprites', Tile.PLAYER, 0, 0, 30, 30, 24, 24);
+    createSpriteBuffer(0, itemSpritesSmall, '#items', Tile.BOAT, 0, 16, 16, 16, 16, 16);
+    createSpriteBuffer(1, itemSpritesSmall, '#items', Tile.AXE, 16, 16, 16, 16, 16, 16);
+    createSpriteBuffer(2, itemSpritesSmall, '#items', Tile.KEY, 32, 16, 16, 16, 16, 16);
+    createSpriteBuffer(3, itemSpritesSmall, '#diamond', Tile.DIAMOND, 0, 0, 16, 16, 16, 16);
+    createSpriteBuffer(4, itemSpritesSmall, '#testtileset', Tile.GATE, 48, 16, 16, 16, 16, 16);
+    createSpriteBuffer(5, itemSpritesSmall, '#playersprites', Tile.PLAYER, 0, 0, 30, 30, 24, 24);
 
-    createSpriteBuffer(0, itemSpritesLarge, 'itemsLarge', Tile.BOAT, 0, 32, 32, 32, 32, 32);
-    createSpriteBuffer(1, itemSpritesLarge, 'itemsLarge', Tile.AXE, 32, 32, 32, 32, 32, 32);
-    createSpriteBuffer(2, itemSpritesLarge, 'itemsLarge', Tile.KEY, 64, 32, 32, 32, 32, 32);
-    createSpriteBuffer(3, itemSpritesLarge, 'diamondLarge', Tile.DIAMOND, 0, 0, 32, 32, 32, 32);
-    createSpriteBuffer(4, itemSpritesLarge, 'testtilesetlarge', Tile.GATE, 96, 32, 32, 32, 32, 32);
-    createSpriteBuffer(0, playerSpritesLarge, 'playerspritesLarge', Tile.PLAYER, 0, 32, 32, 32, 32, 32);
+    createSpriteBuffer(0, itemSpritesLarge, '#itemsLarge', Tile.BOAT, 0, 32, 32, 32, 32, 32);
+    createSpriteBuffer(1, itemSpritesLarge, '#itemsLarge', Tile.AXE, 32, 32, 32, 32, 32, 32);
+    createSpriteBuffer(2, itemSpritesLarge, '#itemsLarge', Tile.KEY, 64, 32, 32, 32, 32, 32);
+    createSpriteBuffer(3, itemSpritesLarge, '#diamondLarge', Tile.DIAMOND, 0, 0, 32, 32, 32, 32);
+    createSpriteBuffer(4, itemSpritesLarge, '#testtilesetlarge', Tile.GATE, 96, 32, 32, 32, 32, 32);
+    createSpriteBuffer(0, playerSpritesLarge, '#playerspritesLarge', Tile.PLAYER, 0, 32, 32, 32, 32, 32);
 
     resetToolMenu();
 
@@ -671,6 +671,7 @@ function translate(sprite) {
                     (sprite == FLOWER) ? 4 : 3;
 }
 
+
 /**
  * Create an off-screen buffer containg an image
  * 
@@ -685,28 +686,18 @@ function translate(sprite) {
  * @param {*} dw the destination width
  * @param {*} dh the destination height
  */
-function createSpriteBuffer(sprite, sprites, src, type, x, y, w, h, dw, dh) {
+ function createSpriteBuffer(sprite, sprites, src, type, x, y, w, h, dw, dh) {
     var canvas = document.createElement('canvas');
 
     canvas.width = dw;
     canvas.height = dh;
-    
-    var content = window.api.fs().readFileSync($(`#${src}`)[0].src.slice(
-        window.api.os().type() == 'Windows_NT' ? 7 : 6));
 
-    var buffer = toArrayBuffer(content);
-    var blob = new Blob([buffer], { type: 'image/gif' });
-    var image = new Image();
-    image.src = URL.createObjectURL(blob);
+    var image = $(src)[0];
+    var context = canvas.getContext('2d');
 
-    image.onload = function () {
-        var context = canvas.getContext('2d');
+    context.drawImage(image, x, y, w, h, 0, 0, dw, dh);
 
-        context.drawImage(image, x, y, w, h, 0, 0, dw, dh);
-
-        sprites[sprite] = new Tile(canvas, type);
-
-    }
+    sprites[sprite] = new Tile(canvas, type);
 
 }
 
@@ -794,14 +785,14 @@ function setMenuItems(snag, tree, water, shrub, flower, field, boat, axe, key, p
 /**
  * Detecting rectanlge overlap
  * 
- * @param {*} x1 'x' coordinate - rectangle 1 
- * @param {*} y1 'y' coordinate - rectangle 1 
- * @param {*} w1 'width' - rectangle 1 
- * @param {*} h1 'height' - rectangle 1 
- * @param {*} x2 'x' coordinate - rectangle 2 
- * @param {*} y2 'y' coordinate - rectangle 2
- * @param {*} w2 'width' - rectangle 2 
- * @param {*} h2 'height' - rectangle 2 
+ * @param {integer} x1 'x' coordinate - rectangle 1 
+ * @param {integer} y1 'y' coordinate - rectangle 1 
+ * @param {integer} w1 'width' - rectangle 1 
+ * @param {integer} h1 'height' - rectangle 1 
+ * @param {integer} x2 'x' coordinate - rectangle 2 
+ * @param {integer} y2 'y' coordinate - rectangle 2
+ * @param {integer} w2 'width' - rectangle 2 
+ * @param {integer} h2 'height' - rectangle 2 
  */
 function overlap(x1, y1, w1, h1, x2, y2, w2, h2) {
     var dx = (x1 < x2) ? x1 + w1 - x2 : x2 + w2 - x1;
@@ -831,22 +822,5 @@ function clearSprite(sprite) {
         }
 
     }
-
-}
-
-/**
- * Buffer to Array Buffer
- * @param {*} buf the input buffer
- * @return an Array Buffer
- * 
- */
-function toArrayBuffer(buf) {
-    var ab = new ArrayBuffer(buf.length);
-    var view = new Uint8Array(ab);
-    for (var i = 0; i < buf.length; ++i) {
-        view[i] = buf[i];
-    }
-
-    return ab;
 
 }
