@@ -67,10 +67,8 @@ app.on('ready', function () {
         let parsedUrl = new URL(request.url);
         let url = path.normalize(path.toNamespacedPath(parsedUrl.pathname).startsWith("\\\\?\\") ?
                                 parsedUrl.pathname.replace('/', '') :  parsedUrl.pathname);
-             
         let ext = path.extname(url);
-        console.log(url);
-
+ 
         switch (ext) {
             case '.pug':
                 var content = pug.renderFile(url);
