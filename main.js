@@ -18,19 +18,18 @@ const mime = require('mime');
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
-const pug = require('pug');
 
 const locals = {};
 
 var mainWindow = null;
 
 function createWindow() {
-    var extend = config.mode == "debug" ? 500 : 0;
+    var extend = config.mode == "debug" ? 300 : 0;
 
     mainWindow = new BrowserWindow({
-       width: 800 + 198, 
-       height: 800 + 56,
-       resizable: false,
+        width: 800 + 198 + extend,
+        height: 800 + 55,
+        resizable: false,
         autoHideMenuBar: true,
 
         webPreferences: {
@@ -48,7 +47,11 @@ function createWindow() {
         mainWindow.webContents.openDevTools();
     }
 
-    mainWindow.loadURL(`pug:///${path.join(__dirname, 'index.pug')}`);
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'index.html'),
+        protocol: 'file',
+        slashes: true
+    }))
 
     mainWindow.on('closed', () => {
 
@@ -60,31 +63,7 @@ function createWindow() {
 
 app.allowRendererProcessReuse = true;
 
-app.on('ready', function () {
-
-    protocol.registerBufferProtocol('pug', function (request, callback) {
-        let parsedUrl = new URL(request.url);
-        let pathname = path.normalize(path.toNamespacedPath(parsedUrl.pathname).startsWith("\\\\?\\") ?
-                                parsedUrl.pathname.replace(/^\/*/, '') :  parsedUrl.pathname);
-        let ext = path.extname(pathname);
- 
-        switch (ext) {
-            case '.pug':
-                var content = pug.renderFile(pathname);
-
-                callback({
-                    mimeType: 'text/html',
-                    data: new Buffer.from(content)
-                });
-                break;
-
-            default:
-                let output = fs.readFileSync(pathname);
-
-                return callback({ data: output, mimeType: mime.getType(ext) });
-        }
-
-    });
+app.on('ready', function() {
 
     createWindow();
 

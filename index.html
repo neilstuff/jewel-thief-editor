@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Jewel Thief Editor</title>
+    <link rel="stylesheet" href="assets/css/ui.css"></link>
+    <link rel="stylesheet" href="assets/css/modal.css"></link>
+
+</head>
+<div class="main" style="width: 100%; height:100%; overflow:hidden;">
+
+    <img id="diamond" class="preload" src="assets/images/diamond.gif"></img>
+    <img id="diamondLarge" class="preload" src="assets/images/diamondLarge.gif"></img>
+    <img id="items" class="preload" src="assets/images/items.gif"><img>
+    <img id="itemsLarge" class="preload" src="assets/images/itemsLarge.gif"><img>
+    <img id="logo" class="preload" src="assets/images/logo.gif"></img>
+    <img id="playersprites" class="preload" src="assets/images/playersprites.gif"></img>
+    <img id="playerspritesLarge" class="preload" src="assets/images/playerspritesLarge.gif"></img>
+    <img id="sparkle" class="preload" src="assets/images/sparkle.gif"></img>
+    <img id="testtileset" class="preload" src="assets/images/testtileset.gif"> </img>
+    <img id="testtilesetlarge" class="preload" src="assets/images/testtilesetlarge.gif"> </img>
+
+    <div id="menu" style="position:absolute; top:8px; left:5px; width:85px; height:804px; border: 3px solid green; background: #a6e26b; display:none;">
+        <div class="drawButton" style="position:absolute; top:12px; left:8px; width:44px; height:14px;">
+            <a class="load" href="">Load</a>
+        </div>
+        <div class="drawButton" style="position:absolute; top:68px; left:8px; width:44px; height:14px;">
+            <a class="reset" href="">Reset</a>
+        </div>
+        <div class="drawButton" style="position:absolute; top:124px; left:8px; width:44px; height:14px;">
+            <a class="save" href="">Save</a>
+        </div>
+        <div class="drawButton" style="position:absolute; bottom:10px; left:8px; width:44px; height:14px;">
+            <a class="about" href="">About</a>
+        </div>
+
+    </div>
+
+    <div id="editor" style="position:absolute; top:8px;  left:100px; height:804px;">
+        <canvas id="canvas" class="canvas" width="804" height="804" style="background-color:#fff;"></canvas>
+    </div>
+
+    <div id="objects" style="position:absolute; top:8px; right:6px; width:50px; height:788px; border: 3px solid green;  background: rgb(166,226,107); padding:8px; display:none;">
+
+        <div class="snagFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectSnag" href="">
+                <img class="snag" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="treeFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectTree" href="">
+                <img class="tree" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="waterFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(141,180,216); border: 3px solid green; padding:6px;">
+            <a class="selectWater" href="">
+                <img class="water" style="width:32px; height:32px; visibility: hidden;"></img>
+            </a>
+        </div>
+        <div class="shrubFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectShrub" href="">
+                <img class="shrub" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="flowerFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectFlower" href="">
+                <img class="flower" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="fieldFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background-color:rgb(177,231,126); border: 3px solid green; padding:6px">
+            <a class="selectField" href="">
+                <img class="field" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="axeFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectAxe" href="">
+                <img class="axe" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="boatFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectBoat" href="">
+                <img class="boat" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="keyFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectKey" href="">
+                <img class="key" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="diamondFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectDiamond" href="">
+                <img class="diamond" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="gateFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectGate" href="">
+                <img class="gate" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+        <div class="playerFiller" style="width:36; height:36; left:8px; top:4px; margin-bottom: 4px; background:rgb(166,226,107); border: 3px solid green; padding:6px;">
+            <a class="selectPlayer" href="">
+                <img class="player" style="width:32px; height:32px;"></img>
+            </a>
+        </div>
+    </div>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Jewel Thief Editor</p>
+            <p>&copy; Neil Brittliff - 2018</p>
+            <p>email: Neil.Brittliff@outlook.com</p>
+        </div>
+
+    </div>
+</div>
+
+<script src="node_modules/jquery/dist/jquery.min.js "></script>
+<script src="assets/javascripts/util/fileutil.js "></script>
+<script src="assets/javascripts/map/tile.js "></script>
+<script src="assets/javascripts/main/main.js "></script>
+
+
+</html>

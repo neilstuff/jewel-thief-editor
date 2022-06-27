@@ -48,7 +48,10 @@ var startPos = {
 
 var selection = [];
 
-$('.reset').on('click', function (e) {
+$('.reset').on('click', function(e) {
+
+    console.log("reset");
+
     var context = $('#canvas')[0].getContext('2d');
 
     resetMap();
@@ -90,7 +93,7 @@ $('.save').on('click', (e) => {
 $('.load').on('click', (e) => {
     var fileutil = new FileUtil(document);
 
-    fileutil.load(function (files) {
+    fileutil.load(function(files) {
         Array.prototype.slice.call(files).forEach((file) => {
             var fileURL = URL.createObjectURL(file);
 
@@ -348,11 +351,10 @@ $('#canvas')[0].addEventListener('mouseup', (evt) => {
 /**
  * Respond to the Document 'ready' event
  */
- $(() => {
-     
+$(() => {
     document.addEventListener('dragover', event => event.preventDefault());
     document.addEventListener('drop', event => event.preventDefault());
-    
+
     resetMap();
 
     createSpriteBuffer(0, mapSpritesSmall, '#testtileset', Tile.BLOCKED, 16, 16, 16, 16, 16, 16);
@@ -390,10 +392,13 @@ $('#canvas')[0].addEventListener('mouseup', (evt) => {
     var image = new Image();
 
     image.src = $('#logo')[0].src;
-    image.onload = function () {
+
+    image.onload = function() {
 
         var context = $('#canvas')[0].getContext('2d');
+
         context.drawImage(image, 0, 0, this.width, this.height, 200, 200, 384, 384);
+
         window.requestAnimationFrame(setupMap);
 
     }
@@ -436,7 +441,7 @@ function resetMap() {
 
             line.push((xMap == 0 || xMap == 39 || yMap == 0 || yMap == 39) ? '20' :
                 (xMap == 19 && yMap == 19) ? PLAYER :
-                    cover < 18 ? '1' : cover == 18 ? FLOWER : SHRUB);
+                cover < 18 ? '1' : cover == 18 ? FLOWER : SHRUB);
 
         }
 
@@ -453,6 +458,7 @@ function setupMap(timestamp) {
     var progress = timestamp - start;
 
     if (progress > 3000) {
+
         $(".snag").attr('src', mapSpritesLarge[0].getImage().toDataURL());
         $(".tree").attr('src', mapSpritesLarge[1].getImage().toDataURL());
         $(".water").attr('src', mapSpritesLarge[2].getImage().toDataURL());
@@ -462,7 +468,6 @@ function setupMap(timestamp) {
 
         $(".axe").attr('src', itemSpritesLarge[1].getImage().toDataURL());
         $(".boat").attr('src', itemSpritesLarge[0].getImage().toDataURL());
-
 
         $(".key").attr('src', itemSpritesLarge[2].getImage().toDataURL());
         $(".gate").attr('src', itemSpritesLarge[4].getImage().toDataURL());
@@ -665,10 +670,10 @@ function waterFill(ctx) {
 function translate(sprite) {
     return sprite == TREE ? 1 :
         (sprite == WATER || sprite == BOAT) ? 5 :
-            (sprite == FIELD || sprite == AXE || sprite == GATE ||
-                sprite == DIAMOND || sprite == KEY || sprite == PLAYER) ? 6 :
-                (sprite == SNAG) ? 0 :
-                    (sprite == FLOWER) ? 4 : 3;
+        (sprite == FIELD || sprite == AXE || sprite == GATE ||
+            sprite == DIAMOND || sprite == KEY || sprite == PLAYER) ? 6 :
+        (sprite == SNAG) ? 0 :
+        (sprite == FLOWER) ? 4 : 3;
 }
 
 
@@ -686,7 +691,7 @@ function translate(sprite) {
  * @param {*} dw the destination width
  * @param {*} dh the destination height
  */
- function createSpriteBuffer(sprite, sprites, src, type, x, y, w, h, dw, dh) {
+function createSpriteBuffer(sprite, sprites, src, type, x, y, w, h, dw, dh) {
     var canvas = document.createElement('canvas');
 
     canvas.width = dw;

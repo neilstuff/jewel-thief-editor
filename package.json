@@ -1,50 +1,47 @@
 {
-  "name": "electron-jewel-thief-editor",
-  "version": "1.0.0",
-  "description": "Electron Jewel Thief Editor",
-  "main": "main.js",
-  "scripts": {
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder --publish never",
-    "start": "electron ."
-  },
-  "build": {
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
+    "name": "electron-jewel-thief-editor",
+    "version": "1.0.0",
+    "description": "Electron Jewel Thief Editor",
+    "main": "main.js",
+    "scripts": {
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder --publish never",
+        "start": "electron ."
+    },
+    "build": {
+        "win": {
+            "target": [{
+                "target": "nsis",
+                "arch": [
+                    "x64",
+                    "ia32"
+                ]
+            }]
         }
-      ]
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thesourorange/electron-jewel-thief-editor.git"
-  },
-  "keywords": [
-    "Electron",
-    "quick",
-    "Jewel Thief",
-    "game"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "dependencies": {
-    "pug": "^2.0.4",
-    "jquery": "^3.5.0",
-    "mime": "^2.4.5"
-  },
-  "devDependencies": {
-    "electron": "^14.0.1",
-    "electron-builder": "^22.11.7",
-    "node": "^16.9.1"
-  },
-  "bugs": {
-    "url": "https://github.com/thesourorange/electron-jewel-thief-editor/issues"
-  },
-  "homepage": "https://github.com/thesourorange/electron-jewel-thief-editor#readme"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thesourorange/electron-jewel-thief-editor.git"
+    },
+    "keywords": [
+        "Electron",
+        "quick",
+        "Jewel Thief",
+        "game"
+    ],
+    "author": "GitHub",
+    "license": "CC0-1.0",
+    "dependencies": {
+        "jquery": "^3.5.0",
+        "mime": "^2.4.5"
+    },
+    "devDependencies": {
+        "electron": "19.0.6",
+        "electron-builder": "23.1.0",
+        "node": "^16.9.1"
+    },
+    "bugs": {
+        "url": "https://github.com/thesourorange/electron-jewel-thief-editor/issues"
+    },
+    "homepage": "https://github.com/thesourorange/electron-jewel-thief-editor#readme"
 }
